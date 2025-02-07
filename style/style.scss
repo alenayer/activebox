@@ -89,7 +89,10 @@ $color-grey: rgba(108, 114, 121, 1);
         // padding: 36px 0;
         padding: 32px 0;
 
+        @media (max-width:767px) {
+            padding: 21px 0;
 
+        }
     }
 
     &__logo {
@@ -100,9 +103,27 @@ $color-grey: rgba(108, 114, 121, 1);
             width: 103px;
         }
     }
+
+    &__menu {
+        display: none;
+
+
+
+        @media (max-width:767px) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 55px;
+            height: 56px;
+        }
+    }
 }
 
 .nav {
+    @media (max-width:767px) {
+        display: none;
+    }
+
     &__list {
         @extend %flexrull;
     }
@@ -113,7 +134,7 @@ $color-grey: rgba(108, 114, 121, 1);
         list-style-type: none;
 
 
-        @media (max-width:1024px) {
+        @media (min-width:768px) and (max-width:1024px) {
             min-width: 112px;
         }
     }
@@ -148,7 +169,7 @@ $color-grey: rgba(108, 114, 121, 1);
     margin-bottom: 116px;
     position: relative;
 
-    @media (max-width:1024px) {
+    @media (min-width:768px) and (max-width:1024px) {
         padding: 157px 0 126px 0;
     }
 
@@ -175,7 +196,7 @@ $color-grey: rgba(108, 114, 121, 1);
         margin-bottom: 31px;
         text-transform: uppercase;
 
-        @media (max-width:1024px) {
+        @media (min-width:768px) and (max-width:1024px) {
             @include font(900, 48px, 56px, center);
             margin-bottom: 62px;
         }
@@ -190,7 +211,7 @@ $color-grey: rgba(108, 114, 121, 1);
         @include font(400, 24px, 28px, center);
         color: $color-white;
 
-        @media (max-width:1024px) {
+        @media (min-width:768px) and (max-width:1024px) {
             @include font(400, 18px, 21px, center);
         }
 
@@ -203,7 +224,7 @@ $color-grey: rgba(108, 114, 121, 1);
     &__btn {
         margin: 80px auto 0;
 
-        @media (max-width:1024px) {
+        @media (min-width:768px) and (max-width:1024px) {
             margin: 89px auto 0;
         }
 
