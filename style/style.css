@@ -9,19 +9,10 @@
 }
 
 .container {
-  max-width: 1170px;
+  max-width: 1210px;
   width: 100%;
   margin: 0 auto;
-}
-@media (min-width: 768px) and (max-width: 1024px) {
-  .container {
-    max-width: 985px;
-  }
-}
-@media (max-width: 767px) {
-  .container {
-    max-width: 280px;
-  }
+  padding: 0 20px;
 }
 
 .btn {
@@ -57,18 +48,16 @@
 }
 
 .header {
-  background-color: rgb(37, 43, 73);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
 .header__container {
   border-bottom: 1px solid rgb(186, 187, 197);
   justify-content: space-between;
   align-items: center;
-  padding: 32px 0;
-}
-@media (max-width: 767px) {
-  .header__container {
-    padding: 21px 0;
-  }
 }
 .header__logo {
   width: 184px;
@@ -109,21 +98,20 @@
 .nav__link {
   text-decoration: none;
   color: rgb(255, 255, 255);
-  font-family: "Raleway", serif;
   font-weight: 700;
   font-size: 15px;
   line-height: 13px;
   text-align: center;
   font-family: "Raleway", serif;
   text-transform: uppercase;
+  display: block;
+  padding: 36px 0;
 }
 .nav__link:hover {
   border-bottom: 3px solid rgb(186, 187, 197);
-  padding-bottom: 32px;
 }
 .nav__link:active {
   border-bottom: 3px solid rgb(231, 20, 20);
-  padding-bottom: 32px;
   color: rgb(231, 20, 20);
 }
 
@@ -132,13 +120,20 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  padding: 130px 0 120px 0;
+  padding: 230px 0 120px 0;
   margin-bottom: 116px;
   position: relative;
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   .banner {
-    padding: 157px 0 126px 0;
+    padding: 257px 0 126px 0;
+    margin-bottom: 78px;
+  }
+}
+@media (max-width: 767px) {
+  .banner {
+    padding: 106px 0 52px 0;
+    margin-bottom: 40px;
   }
 }
 .banner::after {
@@ -192,6 +187,8 @@
   text-align: center;
   font-family: "Raleway", serif;
   color: rgb(255, 255, 255);
+  max-width: 1000px;
+  margin: 0 auto;
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   .banner__text {
@@ -332,10 +329,8 @@
 .download {
   margin-bottom: 114px;
 }
-.download__text {
+.download__title {
   color: rgb(0, 0, 0);
-}
-.download__text:first-of-type {
   font-weight: 500;
   font-size: 30px;
   line-height: 35px;
@@ -344,7 +339,7 @@
   margin-bottom: 22px;
 }
 @media (min-width: 768px) and (max-width: 1024px) {
-  .download__text:first-of-type {
+  .download__title {
     font-weight: 500;
     font-size: 24px;
     line-height: 28px;
@@ -354,7 +349,7 @@
   }
 }
 @media (max-width: 767px) {
-  .download__text:first-of-type {
+  .download__title {
     font-weight: 500;
     font-size: 18px;
     line-height: 21px;
@@ -363,7 +358,8 @@
     margin-bottom: 3px;
   }
 }
-.download__text:last-of-type {
+.download__text {
+  color: rgb(0, 0, 0);
   font-weight: 700;
   font-size: 18px;
   line-height: 21px;
@@ -372,7 +368,7 @@
   text-transform: uppercase;
 }
 @media (min-width: 768px) and (max-width: 1024px) {
-  .download__text:last-of-type {
+  .download__text {
     font-weight: 700;
     font-size: 14px;
     line-height: 16px;
@@ -381,7 +377,7 @@
   }
 }
 @media (max-width: 767px) {
-  .download__text:last-of-type {
+  .download__text {
     font-weight: 700;
     font-size: 13px;
     line-height: 15px;

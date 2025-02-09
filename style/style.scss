@@ -25,20 +25,10 @@ $color-grey: rgba(108, 114, 121, 1);
 }
 
 .container {
-    max-width: 1170px;
+    max-width: 1210px;
     width: 100%;
     margin: 0 auto;
-
-
-    @media (min-width:768px) and (max-width:1024px) {
-        max-width: 985px;
-
-    }
-
-    @media (max-width:767px) {
-        max-width: 280px;
-
-    }
+    padding: 0 20px;
 }
 
 .btn {
@@ -72,13 +62,11 @@ $color-grey: rgba(108, 114, 121, 1);
 
 
 .header {
-
-    background-color: rgba(37, 43, 73, 1);
-
-    // position: fixed;
-    // top: 0;
-    // left: 170px;
-    // z-index: 1;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
 
 
     &__container {
@@ -86,13 +74,6 @@ $color-grey: rgba(108, 114, 121, 1);
         @extend %flexrull;
         justify-content: space-between;
         align-items: center;
-        // padding: 36px 0;
-        padding: 32px 0;
-
-        @media (max-width:767px) {
-            padding: 21px 0;
-
-        }
     }
 
     &__logo {
@@ -142,18 +123,17 @@ $color-grey: rgba(108, 114, 121, 1);
     &__link {
         text-decoration: none;
         color: $color-white;
-        font-family: $font-family-primary;
         @include font(700, 15px, 13px, center);
         text-transform: uppercase;
+        display: block;
+        padding: 36px 0;
 
         &:hover {
             border-bottom: 3px solid rgba(186, 187, 197, 1);
-            padding-bottom: 32px;
         }
 
         &:active {
             border-bottom: 3px solid rgba(231, 20, 20, 1);
-            padding-bottom: 32px;
             color: rgba(231, 20, 20, 1);
         }
     }
@@ -165,12 +145,17 @@ $color-grey: rgba(108, 114, 121, 1);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    padding: 130px 0 120px 0;
+    padding: 230px 0 120px 0;
     margin-bottom: 116px;
     position: relative;
 
     @media (min-width:768px) and (max-width:1024px) {
-        padding: 157px 0 126px 0;
+        padding: 257px 0 126px 0;
+        margin-bottom: 78px;
+    }
+    @media (max-width:767px) {
+        padding: 106px 0 52px 0;
+        margin-bottom: 40px;
     }
 
 
@@ -210,6 +195,8 @@ $color-grey: rgba(108, 114, 121, 1);
     &__text {
         @include font(400, 24px, 28px, center);
         color: $color-white;
+        max-width: 1000px;
+        margin: 0 auto;
 
         @media (min-width:768px) and (max-width:1024px) {
             @include font(400, 18px, 21px, center);
@@ -326,14 +313,11 @@ $color-grey: rgba(108, 114, 121, 1);
 
 .download {
     margin-bottom: 114px;
-    // margin-top: 122px;
 
-    &__text {
+    &__title {
         color: rgba(0, 0, 0, 1);
-
-        &:first-of-type {
-            @include font(500, 30px, 35px, center);
-            margin-bottom: 22px;
+        @include font(500, 30px, 35px, center);
+        margin-bottom: 22px;
 
 
             @media (min-width:768px) and (max-width:1024px) {
@@ -345,9 +329,10 @@ $color-grey: rgba(108, 114, 121, 1);
                 @include font(500, 18px, 21px, center);
                 margin-bottom: 3px;
             }
-        }
+    }
 
-        &:last-of-type {
+    &__text{
+            color: rgba(0, 0, 0, 1);
             @include font(700, 18px, 21px, center);
             text-transform: uppercase;
 
@@ -359,8 +344,6 @@ $color-grey: rgba(108, 114, 121, 1);
                 @include font(700, 13px, 15px, center);
             }
         }
-
-    }
 
     &__btn {
         margin: 50px auto 0;
