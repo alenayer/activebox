@@ -241,6 +241,11 @@ $color-grey: rgba(108, 114, 121, 1);
 .features {
     margin-bottom: 114px;
 
+    &__container {
+        max-width: 1170px;
+        padding: 0;
+    }
+
     @media (min-width:768px) and (max-width:1024px) {
         margin-bottom: 80px;
     }
