@@ -46,6 +46,11 @@
     max-width: 280px;
   }
 }
+@media (max-width: 500px) {
+  .btn {
+    max-width: 100%;
+  }
+}
 
 .header {
   position: fixed;
@@ -55,9 +60,19 @@
   z-index: 1;
 }
 .header__container {
-  border-bottom: 1px solid rgb(186, 187, 197);
   justify-content: space-between;
   align-items: center;
+  position: relative;
+}
+.header__container::before {
+  content: "";
+  display: block;
+  left: 20px;
+  width: calc(100% - 40px);
+  height: 1px;
+  bottom: -1px;
+  position: absolute;
+  background: rgb(186, 187, 197);
 }
 .header__logo {
   width: 184px;
