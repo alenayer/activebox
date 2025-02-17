@@ -16,6 +16,9 @@ $color-grey: rgba(108, 114, 121, 1);
 %flexrull {
     display: flex;
 }
+%gridrull {
+    display: grid;
+}
 
 
 * {
@@ -142,6 +145,7 @@ $color-grey: rgba(108, 114, 121, 1);
         text-transform: uppercase;
         display: block;
         padding: 36px 0;
+        border-bottom: 3px solid transparent;
 
         &:hover {
             border-bottom: 3px solid rgba(186, 187, 197, 1);
@@ -242,21 +246,8 @@ $color-grey: rgba(108, 114, 121, 1);
     margin-bottom: 114px;
 
     &__container {
-        max-width: 1170px;
-        padding: 0;
-    }
-
-    @media (min-width:768px) and (max-width:1024px) {
-        margin-bottom: 80px;
-    }
-
-    @media (max-width:767px) {
-        margin-bottom: 35px;
-    }
-
-    &__items {
-        @extend %flexrull;
-        flex-wrap: wrap;
+        @extend %gridrull;
+        grid-template-columns: repeat(3, 1fr);
         column-gap: 30px;
         row-gap: 88px;
 
@@ -267,20 +258,30 @@ $color-grey: rgba(108, 114, 121, 1);
         }
 
         @media (max-width:767px) {
-            flex-direction: column;
+           grid-template-columns: 1fr;
             row-gap: 41px;
         }
     }
 
+    @media (min-width:768px) and (max-width:1024px) {
+        margin-bottom: 80px;
+    }
+
+    @media (max-width:767px) {
+        margin-bottom: 35px;
+    }
+
+   
+
     &__item {
-        flex-basis: 370px;
+        max-width: 370px;
 
         @media (min-width:768px) and (max-width:1024px) {
-            flex-basis: 315px;
+            max-width: 315px;
         }
 
         @media (max-width:767px) {
-            flex-basis: 279px;
+            max-width: 279px;
         }
     }
 
@@ -342,12 +343,12 @@ $color-grey: rgba(108, 114, 121, 1);
 
             @media (min-width:768px) and (max-width:1024px) {
                 @include font(500, 24px, 28px, center);
-                margin-bottom: 5px;
+                
             }
 
             @media (max-width:767px) {
                 @include font(500, 18px, 21px, center);
-                margin-bottom: 3px;
+               
             }
     }
 

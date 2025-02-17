@@ -1,5 +1,9 @@
-.features__wrapper-icon, .features__items, .nav__list, .header__logo, .header__container {
+.features__wrapper-icon, .nav__list, .header__logo, .header__container {
   display: flex;
+}
+
+.features__container {
+  display: grid;
 }
 
 * {
@@ -121,6 +125,7 @@
   text-transform: uppercase;
   display: block;
   padding: 36px 0;
+  border-bottom: 3px solid transparent;
 }
 .nav__link:hover {
   border-bottom: 3px solid rgb(186, 187, 197);
@@ -241,8 +246,23 @@
   margin-bottom: 114px;
 }
 .features__container {
-  max-width: 1170px;
-  padding: 0;
+  grid-template-columns: repeat(3, 1fr);
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+  row-gap: 88px;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .features__container {
+    -moz-column-gap: 20px;
+         column-gap: 20px;
+    row-gap: 50px;
+  }
+}
+@media (max-width: 767px) {
+  .features__container {
+    grid-template-columns: 1fr;
+    row-gap: 41px;
+  }
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   .features {
@@ -254,36 +274,17 @@
     margin-bottom: 35px;
   }
 }
-.features__items {
-  flex-wrap: wrap;
-  -moz-column-gap: 30px;
-       column-gap: 30px;
-  row-gap: 88px;
-}
-@media (min-width: 768px) and (max-width: 1024px) {
-  .features__items {
-    -moz-column-gap: 20px;
-         column-gap: 20px;
-    row-gap: 50px;
-  }
-}
-@media (max-width: 767px) {
-  .features__items {
-    flex-direction: column;
-    row-gap: 41px;
-  }
-}
 .features__item {
-  flex-basis: 370px;
+  max-width: 370px;
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   .features__item {
-    flex-basis: 315px;
+    max-width: 315px;
   }
 }
 @media (max-width: 767px) {
   .features__item {
-    flex-basis: 279px;
+    max-width: 279px;
   }
 }
 .features__wrapper-icon {
@@ -364,7 +365,6 @@
     line-height: 28px;
     text-align: center;
     font-family: "Raleway", serif;
-    margin-bottom: 5px;
   }
 }
 @media (max-width: 767px) {
@@ -374,7 +374,6 @@
     line-height: 21px;
     text-align: center;
     font-family: "Raleway", serif;
-    margin-bottom: 3px;
   }
 }
 .download__text {
