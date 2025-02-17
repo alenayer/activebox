@@ -271,19 +271,6 @@ $color-grey: rgba(108, 114, 121, 1);
         margin-bottom: 35px;
     }
 
-   
-
-    &__item {
-        max-width: 370px;
-
-        @media (min-width:768px) and (max-width:1024px) {
-            max-width: 315px;
-        }
-
-        @media (max-width:767px) {
-            max-width: 279px;
-        }
-    }
 
     &__wrapper-icon {
         width: 100px;
