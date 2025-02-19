@@ -155,12 +155,14 @@
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   .banner {
+    background-image: url(../media/bgtbl.png);
     padding: 257px 0 126px 0;
     margin-bottom: 78px;
   }
 }
 @media (max-width: 767px) {
   .banner {
+    background-image: url(../media/bgmbl.png);
     padding: 106px 0 52px 0;
     margin-bottom: 40px;
   }
@@ -397,6 +399,7 @@
     line-height: 32px;
     text-align: start;
     font-family: "Cardo", serif;
+    max-width: 330px;
   }
 }
 @media (max-width: 767px) {
@@ -425,6 +428,7 @@
     line-height: 14px;
     text-align: start;
     font-family: "Raleway", serif;
+    max-width: 330px;
   }
 }
 @media (max-width: 767px) {

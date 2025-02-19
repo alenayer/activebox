@@ -182,11 +182,13 @@ $color-grey: rgba(108, 114, 121, 1);
     position: relative;
 
     @media (min-width:768px) and (max-width:1024px) {
+        background-image: url(../media/bgtbl.png);
         padding: 257px 0 126px 0;
         margin-bottom: 78px;
     }
 
     @media (max-width:767px) {
+        background-image: url(../media/bgmbl.png);
         padding: 106px 0 52px 0;
         margin-bottom: 40px;
     }
@@ -351,7 +353,7 @@ $color-grey: rgba(108, 114, 121, 1);
 
         @media (max-width:767px) {
             grid-template-columns: 1fr;
-            // grid-template-rows: 39% 61%;
+           
         }
 
     }
@@ -380,6 +382,8 @@ $color-grey: rgba(108, 114, 121, 1);
 
         @media (min-width:768px) and (max-width:1024px) {
             @include font(400, 24px, 32px, start, $font-family-secondary);
+            max-width: 330px;
+       
         }
 
         @media (max-width:767px) {
@@ -395,6 +399,7 @@ $color-grey: rgba(108, 114, 121, 1);
 
         @media (min-width:768px) and (max-width:1024px) {
             @include font(700, 12px, 14px, start);
+            max-width: 330px;
         }
 
         @media (max-width:767px) {
