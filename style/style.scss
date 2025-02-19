@@ -255,6 +255,20 @@ $color-grey: rgba(108, 114, 121, 1);
 
     }
 
+    &__item {
+        @extend %transitionrull;
+
+
+        &:hover {
+            background-color:rgba(255, 67, 67, 0.8) ;
+            border:rgba(185, 12, 12, 0.8) ;
+        }
+        &:active  {
+            background-color:rgba(185, 12, 12, 0.8);
+            box-shadow: 4px 4px 30px 0 rgba(255, 67, 67, 1);
+        }
+    }
+
     &__link {
         width: 39px;
         height: 39px;
@@ -262,6 +276,13 @@ $color-grey: rgba(108, 114, 121, 1);
         @extend %flexrull;
         justify-content: center;
         align-items: center;
+
+        &:hover path {
+            fill:$color-white ;
+        }
+        &:active path {
+            fill:$color-white ;
+        }
 
 
         @media (min-width:768px) and (max-width:1024px) {
@@ -369,7 +390,20 @@ $color-grey: rgba(108, 114, 121, 1);
             column-gap: 16px;
         }
 
+    }
 
+    &__item {
+        @extend %transitionrull;
+
+
+        &:hover {
+            background-color:$color-white ;
+           
+        }
+        &:active  {
+            background-color:$color-white;
+            box-shadow: 4px 4px 30px 0 rgb(158, 141, 141);
+        }
     }
 
     &__link {
@@ -383,6 +417,13 @@ $color-grey: rgba(108, 114, 121, 1);
         @media (max-width:1024px) {
             width: 33px;
             height: 33px;
+        }
+
+        &:hover path {
+            fill:rgba(53, 60, 101, 1) ;
+        }
+        &:active path {
+            fill:rgba(44, 49, 84, 1) ;
         }
     }
 
