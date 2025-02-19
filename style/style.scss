@@ -19,6 +19,9 @@ $color-grey: rgba(108, 114, 121, 1);
 %gridrull {
     display: grid;
 }
+%transitionrull {
+    transition: all 1s linear;
+}
 
 
 * {
@@ -44,6 +47,7 @@ $color-grey: rgba(108, 114, 121, 1);
     width: 100%;
     border: none;
     text-transform: uppercase;
+    @extend %transitionrull;
 
     &:hover {
         background-color: rgba(231, 20, 20, 1);
@@ -146,6 +150,8 @@ $color-grey: rgba(108, 114, 121, 1);
         display: block;
         padding: 36px 0;
         border-bottom: 3px solid transparent;
+
+        @extend %transitionrull;
 
         &:hover {
             border-bottom: 3px solid rgba(186, 187, 197, 1);
