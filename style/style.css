@@ -82,6 +82,11 @@
   position: absolute;
   background: rgb(186, 187, 197);
 }
+@media (max-width: 767px) {
+  .header__container::before {
+    display: none;
+  }
+}
 .header__logo {
   width: 184px;
 }

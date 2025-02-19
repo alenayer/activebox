@@ -95,6 +95,10 @@ $color-grey: rgba(108, 114, 121, 1);
             bottom: -1px;
             position: absolute;
             background: rgba(186, 187, 197, 1);
+
+            @media (max-width:767px) {
+                display: none;
+            }
         }
     }
 
