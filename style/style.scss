@@ -16,9 +16,11 @@ $color-grey: rgba(108, 114, 121, 1);
 %flexrull {
     display: flex;
 }
+
 %gridrull {
     display: grid;
 }
+
 %transitionrull {
     transition: all 1s linear;
 }
@@ -64,6 +66,7 @@ $color-grey: rgba(108, 114, 121, 1);
     @media (max-width:767px) {
         max-width: 280px;
     }
+
     @media (max-width:500px) {
         max-width: 100%;
     }
@@ -182,6 +185,7 @@ $color-grey: rgba(108, 114, 121, 1);
         padding: 257px 0 126px 0;
         margin-bottom: 78px;
     }
+
     @media (max-width:767px) {
         padding: 106px 0 52px 0;
         margin-bottom: 40px;
@@ -268,7 +272,7 @@ $color-grey: rgba(108, 114, 121, 1);
         }
 
         @media (max-width:767px) {
-           grid-template-columns: 1fr;
+            grid-template-columns: 1fr;
             row-gap: 41px;
         }
     }
@@ -336,6 +340,7 @@ $color-grey: rgba(108, 114, 121, 1);
     @media (min-width:768px) and (max-width:1024px) {
         margin-bottom: 77px;
     }
+
     @media (max-width:767px) {
         margin-bottom: 53px;
     }
@@ -363,7 +368,7 @@ $color-grey: rgba(108, 114, 121, 1);
             align-items: start;
         }
     }
-    
+
 
     &__testimonial {
         @include font(400, 36px, 49px, start, $font-family-secondary);
@@ -376,6 +381,7 @@ $color-grey: rgba(108, 114, 121, 1);
         @media (min-width:768px) and (max-width:1024px) {
             @include font(400, 24px, 32px, start, $font-family-secondary);
         }
+
         @media (max-width:767px) {
             @include font(400, 24px, 32px, center, $font-family-secondary);
         }
@@ -390,6 +396,7 @@ $color-grey: rgba(108, 114, 121, 1);
         @media (min-width:768px) and (max-width:1024px) {
             @include font(700, 12px, 14px, start);
         }
+
         @media (max-width:767px) {
             @include font(700, 12px, 14px, center);
         }
@@ -416,33 +423,75 @@ $color-grey: rgba(108, 114, 121, 1);
         margin-bottom: 22px;
 
 
-            @media (min-width:768px) and (max-width:1024px) {
-                @include font(500, 24px, 28px, center);
-                
-            }
+        @media (min-width:768px) and (max-width:1024px) {
+            @include font(500, 24px, 28px, center);
 
-            @media (max-width:767px) {
-                @include font(500, 18px, 21px, center);
-               
-            }
+        }
+
+        @media (max-width:767px) {
+            @include font(500, 18px, 21px, center);
+
+        }
     }
 
-    &__text{
-            color: rgba(0, 0, 0, 1);
-            @include font(700, 18px, 21px, center);
-            text-transform: uppercase;
+    &__text {
+        color: rgba(0, 0, 0, 1);
+        @include font(700, 18px, 21px, center);
+        text-transform: uppercase;
 
-            @media (min-width:768px) and (max-width:1024px) {
-                @include font(700, 14px, 16px, center);
-            }
-
-            @media (max-width:767px) {
-                @include font(700, 13px, 15px, center);
-            }
+        @media (min-width:768px) and (max-width:1024px) {
+            @include font(700, 14px, 16px, center);
         }
+
+        @media (max-width:767px) {
+            @include font(700, 13px, 15px, center);
+        }
+    }
 
     &__btn {
         margin: 50px auto 0;
+
+        animation: shake-bottom 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
+
+        @keyframes shake-bottom {
+
+            0%,
+            100% {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+                -webkit-transform-origin: 50% 100%;
+                transform-origin: 50% 100%;
+            }
+
+            10% {
+                -webkit-transform: rotate(2deg);
+                transform: rotate(2deg);
+            }
+
+            20%,
+            40%,
+            60% {
+                -webkit-transform: rotate(-4deg);
+                transform: rotate(-4deg);
+            }
+
+            30%,
+            50%,
+            70% {
+                -webkit-transform: rotate(4deg);
+                transform: rotate(4deg);
+            }
+
+            80% {
+                -webkit-transform: rotate(-2deg);
+                transform: rotate(-2deg);
+            }
+
+            90% {
+                -webkit-transform: rotate(2deg);
+                transform: rotate(2deg);
+            }
+        }
 
         @media (min-width:768px) and (max-width:1024px) {
             @include font(900, 18px, 21px, center);
