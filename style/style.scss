@@ -66,6 +66,7 @@ $color-grey: rgba(108, 114, 121, 1);
     @media (max-width:767px) {
         max-width: 280px;
     }
+
     @media (max-width:500px) {
         max-width: 100%;
     }
@@ -179,6 +180,7 @@ $color-grey: rgba(108, 114, 121, 1);
         padding: 257px 0 126px 0;
         margin-bottom: 78px;
     }
+
     @media (max-width:767px) {
         background-image: url(../media/bgmbl.png);
         padding: 106px 0 52px 0;
@@ -266,7 +268,7 @@ $color-grey: rgba(108, 114, 121, 1);
         }
 
         @media (max-width:767px) {
-           grid-template-columns: 1fr;
+            grid-template-columns: 1fr;
             row-gap: 41px;
         }
     }
@@ -505,7 +507,6 @@ $color-grey: rgba(108, 114, 121, 1);
     &__item {
         @extend %transitionrull;
 
-
         &:hover {
             background-color: rgba(255, 67, 67, 0.8);
             border: rgba(185, 12, 12, 0.8);
@@ -544,6 +545,136 @@ $color-grey: rgba(108, 114, 121, 1);
         }
     }
 }
+.testimonials {
+
+    margin-bottom: 122px;
+    padding-bottom: 45px;
+
+    @media (min-width:768px) and (max-width:1024px) {
+        margin-bottom: 77px;
+        padding-bottom: 33px;
+    }
+
+    @media (max-width:767px) {
+        margin-bottom: 53px;
+        padding-bottom: 32px;
+    }
+
+    &__container {
+        display: grid;
+        grid-template-columns: 49% 51%;
+
+        @media (max-width:767px) {
+            grid-template-columns: 1fr;
+        }
+
+    }
+
+    &__content {
+        background-color: rgba(92, 50, 73, 1);
+        padding: 20px 50px 10px 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        @media (max-width:767px) {
+            padding: 20px 25px 95px 20px;
+            align-items: start;
+        }
+
+        &-testimonial {
+            @include font(400, 36px, 49px, start, $font-family-secondary);
+            font-style: italic;
+            text-transform: capitalize;
+            max-width: 471px;
+            margin-bottom: 24px;
+            color: $color-white;
+    
+            @media (min-width:768px) and (max-width:1024px) {
+                @include font(400, 24px, 32px, start, $font-family-secondary);
+                max-width: 330px;
+            }
+    
+            @media (max-width:767px) {
+                @include font(400, 24px, 32px, center, $font-family-secondary);
+                max-width: 100%;
+            }
+        }
+    
+        &-info {
+            @include font(700, 13px, 15px, start);
+            text-transform: uppercase;
+            max-width: 470px;
+            width: 100%;
+            color: $color-white;
+            
+    
+            @media (min-width:768px) and (max-width:1024px) {
+                @include font(700, 12px, 14px, start);
+                max-width: 330px;
+            }
+    
+            @media (max-width:767px) {
+                @include font(700, 12px, 14px, center);
+                max-width: 100%;
+            }
+        }
+    }
+
+    &__wrapper-img {
+        display: flex;
+        aspect-ratio: 1/.7;
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .swiper-pagination-bullet {
+        width: 14px;
+        height: 14px;
+        border: 1px solid rgba(126, 93, 111, 1);
+        background-color: transparent;
+        opacity: 1;
+        
+        @extend %transitionrull;
+
+        @media (max-width:1024px) {
+            width: 9px;
+            height: 9px;
+        }
+    }
+
+    &.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+    &.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+        margin: 0;
+    }
+
+    &.swiper-horizontal>.swiper-pagination-bullets,
+    &.swiper-pagination-bullets.swiper-pagination-horizontal,
+    &.swiper-pagination-custom,
+    &.swiper-pagination-fraction {
+        bottom: 0;
+    }
+
+
+    .swiper-pagination-bullet-active {
+        background-color: rgba(126, 93, 111, 1);
+    }
+
+    .swiper-pagination {
+        display: flex;
+        justify-content: center;
+        column-gap: 25px;
+
+        @media (max-width:767px) {
+            column-gap: 21px;
+        }
+    }
+}
 .download {
     margin-bottom: 114px;
 
@@ -571,7 +702,6 @@ $color-grey: rgba(108, 114, 121, 1);
                 @include font(700, 13px, 15px, center);
             }
         }
-
     &__btn {
         margin: 50px auto 0;
 
