@@ -26,13 +26,12 @@ $color-grey: rgba(108, 114, 121, 1);
 }
 
 
-
-
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+
 
 .container {
     max-width: 1210px;
@@ -40,199 +39,6 @@ $color-grey: rgba(108, 114, 121, 1);
     margin: 0 auto;
     padding: 0 20px;
 }
-
-
-.works {
-    margin-bottom: 114px;
-
-    &__container {
-        column-gap: 2px;
-        row-gap: 2px;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-
-        @media (max-width:767px) {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-
-    .work {
-        position: relative;
-        aspect-ratio: 1/.9;
-        overflow: hidden;
-
-
-
-        &__img {
-            position: absolute;
-            object-fit: cover;
-            width: 100%;
-            height: 100%;
-            left: 0;
-            top: 0;
-
-
-            animation: kenburns-top-right 5s linear infinite reverse both;
-
-            @keyframes kenburns-top-right {
-                0% {
-                    -webkit-transform: scale(1) translate(0, 0);
-                    transform: scale(1) translate(0, 0);
-                    -webkit-transform-origin: 84% 16%;
-                    transform-origin: 84% 16%;
-                }
-
-                100% {
-                    -webkit-transform: scale(1.25) translate(20px, -15px);
-                    transform: scale(1.25) translate(20px, -15px);
-                    -webkit-transform-origin: right top;
-                    transform-origin: right top;
-                }
-            }
-        }
-
-        &__content {
-            position: absolute;
-            opacity: 0;
-            width: 100%;
-            height: 100%;
-            left: 0;
-            top: 0;
-            background-color: rgba(255, 67, 67, 0.8);
-            padding: 10px;
-
-            @extend %flexrull;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            row-gap: 20px;
-
-            @media (min-width:768px) and (max-width:1024px) {
-                row-gap: 22px;
-            }
-
-            @media (max-width:767px) {
-                row-gap: 16px;
-            }
-
-            @extend %transitionrull;
-
-
-            &:hover {
-                opacity: 1;
-            }
-
-            &:active {
-                opacity: 1;
-                background-color: rgba(185, 12, 12, 0.8);
-            }
-        }
-
-        &__title {
-            @include font(900, 24px, 28px, center);
-            color: $color-white;
-            text-transform: uppercase;
-
-            @media (max-width:1024px) {
-                @include font(900, 18px, 21px, center);
-            }
-
-        }
-
-        &__text {
-            @include font(400, 18px, 21px, center);
-            color: $color-white;
-            text-transform: capitalize;
-
-            @media (max-width:1024px) {
-                @include font(400, 14px, 16px, center);
-            }
-        }
-    }
-}
-
-
-.team {
-    margin-bottom: 124px;
-
-    @media (min-width:768px) and (max-width:1024px) {
-        margin-bottom: 78px;
-    }
-
-    @media (max-width:767px) {
-        margin-bottom: 41px;
-    }
-
-    &__container {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        column-gap: 30px;
-        max-width: 1170px;
-        padding: 0;
-
-
-        @media (min-width:768px) and (max-width:1024px) {
-            column-gap: 25px;
-            padding: 0 20px;
-        }
-
-        @media (max-width:767px) {
-            grid-template-columns: 1fr;
-            row-gap: 50px;
-            padding: 0 20px;
-        }
-    }
-
-
-}
-
-.member {
-    &__wrapper-img {
-        display: flex;
-        aspect-ratio: 1/1;
-        margin-bottom: 30px;
-
-        @media (min-width:768px) and (max-width:1024px) {
-            margin-bottom: 25px;
-        }
-
-        @media (max-width:767px) {
-            aspect-ratio: 1/.8;
-        }
-    }
-
-    &__img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    &__name {
-        @include font(700, 24px, 28px, start);
-        color: $color-black;
-        text-transform: capitalize;
-        margin-bottom: 5px;
-
-        @media (max-width:1024px) {
-            @include font(700, 18px, 21px, start);
-        }
-
-    }
-
-    &__post {
-        @include font(400, 18px, 21px, start);
-        color: rgba(255, 67, 67, 1);
-        text-transform: uppercase;
-        margin-bottom: 18px;
-
-        @media (min-width:768px) and (max-width:1024px) {
-            @include font(400, 14px, 16px, start);
-            margin-bottom: 22px;
-        }
-
-        @media (max-width:767px) {
-            margin-bottom: 38px;
-
 .btn {
     display: block;
     @include font(900, 24px, 28px, center);
@@ -243,6 +49,7 @@ $color-grey: rgba(108, 114, 121, 1);
     width: 100%;
     border: none;
     text-transform: uppercase;
+    @extend %transitionrull;
 
     &:hover {
         background-color: rgba(231, 20, 20, 1);
@@ -273,9 +80,7 @@ $color-grey: rgba(108, 114, 121, 1);
     left: 0;
     z-index: 1;
 
-
     &__container {
-        // border-bottom: 1px solid rgba(186, 187, 197, 1);
         @extend %flexrull;
         justify-content: space-between;
         align-items: center;
@@ -290,9 +95,12 @@ $color-grey: rgba(108, 114, 121, 1);
             bottom: -1px;
             position: absolute;
             background: rgba(186, 187, 197, 1);
+
+            @media (max-width:767px) {
+                display: none;
+            }
         }
     }
-
     &__logo {
         @extend %flexrull;
         width: 184px;
@@ -301,11 +109,8 @@ $color-grey: rgba(108, 114, 121, 1);
             width: 103px;
         }
     }
-
     &__menu {
         display: none;
-
-
 
         @media (max-width:767px) {
             display: flex;
@@ -316,7 +121,6 @@ $color-grey: rgba(108, 114, 121, 1);
         }
     }
 }
-
 .nav {
     @media (max-width:767px) {
         display: none;
@@ -325,7 +129,6 @@ $color-grey: rgba(108, 114, 121, 1);
     &__list {
         @extend %flexrull;
     }
-
     &__item {
         min-width: 134px;
         text-align: center;
@@ -336,15 +139,20 @@ $color-grey: rgba(108, 114, 121, 1);
             min-width: 112px;
         }
     }
-
     &__link {
         text-decoration: none;
         color: $color-white;
-        @include font(700, 15px, 13px, center);
+        @include font(700, 13px, 15px, center);
         text-transform: uppercase;
         display: block;
         padding: 36px 0;
         border-bottom: 3px solid transparent;
+
+        @extend %transitionrull;
+
+        @media (min-width:768px) and (max-width:1024px) {
+            @include font(700, 12px, 14px, center);
+        }
 
         &:hover {
             border-bottom: 3px solid rgba(186, 187, 197, 1);
@@ -357,7 +165,6 @@ $color-grey: rgba(108, 114, 121, 1);
     }
 }
 
-
 .banner {
     background-image: url(../media/bg.png);
     background-repeat: no-repeat;
@@ -368,10 +175,12 @@ $color-grey: rgba(108, 114, 121, 1);
     position: relative;
 
     @media (min-width:768px) and (max-width:1024px) {
+        background-image: url(../media/bgtbl.png);
         padding: 257px 0 126px 0;
         margin-bottom: 78px;
     }
     @media (max-width:767px) {
+        background-image: url(../media/bgmbl.png);
         padding: 106px 0 52px 0;
         margin-bottom: 40px;
     }
@@ -392,7 +201,6 @@ $color-grey: rgba(108, 114, 121, 1);
         position: relative;
         z-index: 1;
     }
-
     &__title {
         @include font(900, 64px, 75px, center);
         color: $color-white;
@@ -410,9 +218,271 @@ $color-grey: rgba(108, 114, 121, 1);
 
         }
     }
-
     &__text {
+        @include font(400, 24px, 28px, center);
+        color: $color-white;
+        max-width: 1000px;
+        margin: 0 auto;
 
+        @media (min-width:768px) and (max-width:1024px) {
+            @include font(400, 18px, 21px, center);
+        }
+
+        @media (max-width:767px) {
+            @include font(400, 14px, 16px, center);
+        }
+    }
+    &__btn {
+        margin: 80px auto 0;
+
+        @media (min-width:768px) and (max-width:1024px) {
+            margin: 89px auto 0;
+        }
+
+        @media (max-width:767px) {
+            margin: 49px auto 0;
+        }
+    }
+}
+.features {
+    margin-bottom: 114px;
+
+    @media (min-width:768px) and (max-width:1024px) {
+        margin-bottom: 80px;
+    }
+    @media (max-width:767px) {
+        margin-bottom: 35px;
+    }
+
+    &__container {
+        @extend %gridrull;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 30px;
+        row-gap: 88px;
+
+        @media (min-width:768px) and (max-width:1024px) {
+            column-gap: 20px;
+            row-gap: 50px;
+        }
+
+        @media (max-width:767px) {
+           grid-template-columns: 1fr;
+            row-gap: 41px;
+        }
+    }
+    &__wrapper-icon {
+        width: 100px;
+        height: 100px;
+        @extend %flexrull;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 29px;
+
+        @media (min-width:768px) and (max-width:1024px) {
+            width: 85px;
+            height: 85px;
+            margin: 0 auto 23px;
+        }
+
+        @media (max-width:767px) {
+            width: 75px;
+            height: 75px;
+            margin: 0 auto 21px;
+        }
+    }
+    &__title {
+        @include font(900, 24px, 28px, center);
+        color: $color-black;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+
+        @media (min-width:768px) and (max-width:1024px) {
+            @include font(900, 18px, 21px, center);
+            margin-bottom: 4px;
+        }
+    }
+    &__text {
+        @include font(400, 18px, 21px, center);
+        color: $color-grey;
+
+        @media (min-width:768px) and (max-width:1024px) {
+            @include font(400, 14px, 16px, center);
+        }
+    }
+}
+.works {
+    margin-bottom: 114px;
+
+    &__container {
+        column-gap: 2px;
+        row-gap: 2px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+
+        @media (max-width:767px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    .work {
+        position: relative;
+        aspect-ratio: 1/.9;
+        overflow: hidden;
+
+        &__img {
+            position: absolute;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+
+            animation: kenburns-top-right 5s linear infinite reverse both;
+
+            @keyframes kenburns-top-right {
+                0% {
+                    -webkit-transform: scale(1) translate(0, 0);
+                    transform: scale(1) translate(0, 0);
+                    -webkit-transform-origin: 84% 16%;
+                    transform-origin: 84% 16%;
+                }
+
+                100% {
+                    -webkit-transform: scale(1.25) translate(20px, -15px);
+                    transform: scale(1.25) translate(20px, -15px);
+                    -webkit-transform-origin: right top;
+                    transform-origin: right top;
+                }
+            }
+        }
+        &__content {
+            position: absolute;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background-color: rgba(255, 67, 67, 0.8);
+            padding: 10px;
+
+            @extend %flexrull;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            row-gap: 20px;
+
+            @media (min-width:768px) and (max-width:1024px) {
+                row-gap: 22px;
+            }
+
+            @media (max-width:767px) {
+                row-gap: 16px;
+            }
+
+            @extend %transitionrull;
+            &:hover {
+                opacity: 1;
+            }
+
+            &:active {
+                opacity: 1;
+                background-color: rgba(185, 12, 12, 0.8);
+            }
+        }
+        &__title {
+            @include font(900, 24px, 28px, center);
+            color: $color-white;
+            text-transform: uppercase;
+
+            @media (max-width:1024px) {
+                @include font(900, 18px, 21px, center);
+            }
+        }
+        &__text {
+            @include font(400, 18px, 21px, center);
+            color: $color-white;
+            text-transform: capitalize;
+
+            @media (max-width:1024px) {
+                @include font(400, 14px, 16px, center);
+            }
+        }
+    }
+}
+.team {
+    margin-bottom: 124px;
+
+    @media (min-width:768px) and (max-width:1024px) {
+        margin-bottom: 78px;
+    }
+    @media (max-width:767px) {
+        margin-bottom: 41px;
+    }
+
+    &__container {
+        @extend %gridrull;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 30px;
+        max-width: 1170px;
+        padding: 0;
+
+        @media (min-width:768px) and (max-width:1024px) {
+            column-gap: 25px;
+            padding: 0 20px;
+        }
+        @media (max-width:767px) {
+            grid-template-columns: 1fr;
+            row-gap: 50px;
+            padding: 0 20px;
+        }
+    }
+}
+.member {
+    &__wrapper-img {
+        @extend %flexrull;
+        aspect-ratio: 1/1;
+        margin-bottom: 30px;
+
+        @media (min-width:768px) and (max-width:1024px) {
+            margin-bottom: 25px;
+        }
+
+        @media (max-width:767px) {
+            aspect-ratio: 1/.8;
+        }
+    }
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    &__name {
+        @include font(700, 24px, 28px, start);
+        color: $color-black;
+        text-transform: capitalize;
+        margin-bottom: 5px;
+
+        @media (max-width:1024px) {
+            @include font(700, 18px, 21px, start);
+        }
+
+    }
+    &__post {
+        @include font(400, 18px, 21px, start);
+        color: rgba(255, 67, 67, 1);
+        text-transform: uppercase;
+        margin-bottom: 18px;
+
+        @media (min-width:768px) and (max-width:1024px) {
+            @include font(400, 14px, 16px, start);
+            margin-bottom: 22px;
+        }
+
+        @media (max-width:767px) {
+            margin-bottom: 38px;
+        }
+    }
+    &__text {
         @include font(400, 18px, 21px, start);
         color: rgba(108, 114, 121, 1);
         margin-bottom: 38px;
@@ -426,28 +496,26 @@ $color-grey: rgba(108, 114, 121, 1);
             margin-bottom: 55px;
         }
     }
-
     &__list {
         list-style-type: none;
         @extend %flexrull;
         column-gap: 6px;
 
     }
-
     &__item {
         @extend %transitionrull;
 
 
         &:hover {
-            background-color:rgba(255, 67, 67, 0.8) ;
-            border:rgba(185, 12, 12, 0.8) ;
+            background-color: rgba(255, 67, 67, 0.8);
+            border: rgba(185, 12, 12, 0.8);
         }
-        &:active  {
-            background-color:rgba(185, 12, 12, 0.8);
+
+        &:active {
+            background-color: rgba(185, 12, 12, 0.8);
             box-shadow: 4px 4px 30px 0 rgba(255, 67, 67, 1);
         }
     }
-
     &__link {
         width: 39px;
         height: 39px;
@@ -457,10 +525,11 @@ $color-grey: rgba(108, 114, 121, 1);
         align-items: center;
 
         &:hover path {
-            fill:$color-white ;
+            fill: $color-white ;
         }
+
         &:active path {
-            fill:$color-white ;
+            fill: $color-white ;
         }
 
 
@@ -474,23 +543,99 @@ $color-grey: rgba(108, 114, 121, 1);
             height: 39px;
         }
     }
-
 }
+.download {
+    margin-bottom: 114px;
 
+    &__title {
+        color: rgba(0, 0, 0, 1);
+        @include font(500, 30px, 35px, center);
+        margin-bottom: 22px;
 
+            @media (min-width:768px) and (max-width:1024px) {
+                @include font(500, 24px, 28px, center); 
+            }
+            @media (max-width:767px) {
+                @include font(500, 18px, 21px, center);
+            }
+    }
+    &__text{
+            color: rgba(0, 0, 0, 1);
+            @include font(700, 18px, 21px, center);
+            text-transform: uppercase;
+
+            @media (min-width:768px) and (max-width:1024px) {
+                @include font(700, 14px, 16px, center);
+            }
+            @media (max-width:767px) {
+                @include font(700, 13px, 15px, center);
+            }
+        }
+
+    &__btn {
+        margin: 50px auto 0;
+
+        animation: shake-bottom 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
+
+        @keyframes shake-bottom {
+
+            0%,
+            100% {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+                -webkit-transform-origin: 50% 100%;
+                transform-origin: 50% 100%;
+            }
+
+            10% {
+                -webkit-transform: rotate(2deg);
+                transform: rotate(2deg);
+            }
+
+            20%,
+            40%,
+            60% {
+                -webkit-transform: rotate(-4deg);
+                transform: rotate(-4deg);
+            }
+
+            30%,
+            50%,
+            70% {
+                -webkit-transform: rotate(4deg);
+                transform: rotate(4deg);
+            }
+
+            80% {
+                -webkit-transform: rotate(-2deg);
+                transform: rotate(-2deg);
+            }
+
+            90% {
+                -webkit-transform: rotate(2deg);
+                transform: rotate(2deg);
+            }
+        }
+
+        @media (min-width:768px) and (max-width:1024px) {
+            @include font(900, 18px, 21px, center);
+            margin: 43px auto 0;
+        }
+        @media (max-width:767px) {
+            margin: 11px auto 0;
+        }
+    }
+}
 .footer {
     background-color: rgba(53, 60, 101, 1);
     padding-top: 71px;
 
-
     @media (min-width:768px) and (max-width:1024px) {
         padding-top: 47px;
     }
-
     @media (max-width:767px) {
         padding-top: 34px;
     }
-
 
     &__container {
         @extend %gridrull;
@@ -508,92 +653,9 @@ $color-grey: rgba(108, 114, 121, 1);
         @media (max-width:767px) {
             grid-template-columns: 1fr;
             row-gap: 64px;
-
-        @include font(400, 24px, 28px, center);
-        color: $color-white;
-        max-width: 1000px;
-        margin: 0 auto;
-
-        @media (min-width:768px) and (max-width:1024px) {
-            @include font(400, 18px, 21px, center);
-        }
-
-        @media (max-width:767px) {
-            @include font(400, 14px, 16px, center);
-        }
-
     }
-
-    &__btn {
-        margin: 80px auto 0;
-
-        @media (min-width:768px) and (max-width:1024px) {
-            margin: 89px auto 0;
-        }
-
-        @media (max-width:767px) {
-            margin: 49px auto 0;
-        }
-
-
     }
-}
-
-.features {
-    margin-bottom: 114px;
-
-    &__container {
-        @extend %gridrull;
-        grid-template-columns: repeat(3, 1fr);
-        column-gap: 30px;
-        row-gap: 88px;
-
-
-        @media (min-width:768px) and (max-width:1024px) {
-            column-gap: 20px;
-            row-gap: 50px;
-        }
-
-        @media (max-width:767px) {
-           grid-template-columns: 1fr;
-            row-gap: 41px;
-        }
-    }
-
-    @media (min-width:768px) and (max-width:1024px) {
-        margin-bottom: 80px;
-    }
-
-    @media (max-width:767px) {
-        margin-bottom: 35px;
-    }
-
-
-    &__wrapper-icon {
-        width: 100px;
-        height: 100px;
-        @extend %flexrull;
-        justify-content: center;
-        align-items: center;
-        margin: 0 auto 29px;
-
-
-        @media (min-width:768px) and (max-width:1024px) {
-            width: 85px;
-            height: 85px;
-            margin: 0 auto 23px;
-        }
-
-        @media (max-width:767px) {
-            width: 75px;
-            height: 75px;
-            margin: 0 auto 21px;
-
-        }
-    }
-
     &__title {
-
         @include font(700, 18px, 21px, center);
         color: $color-white;
         margin-bottom: 29px;
@@ -620,40 +682,21 @@ $color-grey: rgba(108, 114, 121, 1);
                 margin-bottom: 36px;
             }
         }
-
-        @include font(900, 24px, 28px, center);
-        color: $color-black;
-        text-transform: uppercase;
-        margin-bottom: 20px;
-
-        @media (min-width:768px) and (max-width:1024px) {
-            @include font(900, 18px, 21px, center);
-            margin-bottom: 4px;
-        }
-
-
     }
-
     &__text {
         @include font(400, 18px, 21px, center);
-
         color: $color-white;
         text-transform: capitalize;
-
-        color: $color-grey;
-
 
         @media (min-width:768px) and (max-width:1024px) {
             @include font(400, 14px, 16px, center);
         }
-
 
         @media (max-width:767px) {
             @include font(400, 14px, 16px, center);
         }
 
     }
-
     &__list {
         list-style-type: none;
         @extend %flexrull;
@@ -669,7 +712,6 @@ $color-grey: rgba(108, 114, 121, 1);
         }
 
     }
-
     &__item {
         @extend %transitionrull;
 
@@ -683,7 +725,6 @@ $color-grey: rgba(108, 114, 121, 1);
             box-shadow: 4px 4px 30px 0 rgb(158, 141, 141);
         }
     }
-
     &__link {
         width: 39px;
         height: 39px;
@@ -706,20 +747,15 @@ $color-grey: rgba(108, 114, 121, 1);
     }
 
 }
-
 .copyright {
     background-color: rgba(44, 49, 84, 1);
     padding: 24px 0;
 
-
     @media (min-width:768px) and (max-width:1024px) {
         padding: 14px 0;
-
     }
-
     @media (max-width:767px) {
         padding: 29px 0;
-
     }
 
     &__container {
@@ -727,61 +763,7 @@ $color-grey: rgba(108, 114, 121, 1);
         margin: 0 auto;
         padding: 0 20px;
     }
-
-
     &__text {
         color: rgba(128, 128, 128, 1);
-
-    }
-
-}
-
-
-.download {
-    margin-bottom: 114px;
-
-    &__title {
-        color: rgba(0, 0, 0, 1);
-        @include font(500, 30px, 35px, center);
-        margin-bottom: 22px;
-
-
-            @media (min-width:768px) and (max-width:1024px) {
-                @include font(500, 24px, 28px, center);
-                
-            }
-
-            @media (max-width:767px) {
-                @include font(500, 18px, 21px, center);
-               
-            }
-    }
-
-    &__text{
-            color: rgba(0, 0, 0, 1);
-            @include font(700, 18px, 21px, center);
-            text-transform: uppercase;
-
-            @media (min-width:768px) and (max-width:1024px) {
-                @include font(700, 14px, 16px, center);
-            }
-
-            @media (max-width:767px) {
-                @include font(700, 13px, 15px, center);
-            }
-        }
-
-    &__btn {
-        margin: 50px auto 0;
-
-        @media (min-width:768px) and (max-width:1024px) {
-            @include font(900, 18px, 21px, center);
-            margin: 43px auto 0;
-        }
-
-        @media (max-width:767px) {
-            margin: 11px auto 0;
-        }
-
     }
 }
