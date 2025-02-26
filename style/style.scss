@@ -533,6 +533,10 @@ $color-grey: rgba(108, 114, 121, 1);
             fill: $color-white ;
         }
 
+        path {
+            @extend %transitionrull;
+        }
+
 
         @media (min-width:768px) and (max-width:1024px) {
             width: 33px;
@@ -873,6 +877,10 @@ $color-grey: rgba(108, 114, 121, 1);
         }
         &:active path {
             fill:rgba(44, 49, 84, 1) ;
+        }
+
+        path {
+            @extend %transitionrull;
         }
     }
 

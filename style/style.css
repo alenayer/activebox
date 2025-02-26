@@ -6,7 +6,7 @@
   display: grid;
 }
 
-.footer__item, .testimonials .swiper-pagination-bullet, .member__item, .works .work__content, .nav__link, .btn {
+.footer__link path, .footer__item, .testimonials .swiper-pagination-bullet, .member__link path, .member__item, .works .work__content, .nav__link, .btn {
   transition: all 1s linear;
 }
 
@@ -1015,7 +1015,6 @@
 .footer__link:active path {
   fill: rgb(44, 49, 84);
 }
-
 .copyright {
   background-color: rgb(44, 49, 84);
   padding: 24px 0;
